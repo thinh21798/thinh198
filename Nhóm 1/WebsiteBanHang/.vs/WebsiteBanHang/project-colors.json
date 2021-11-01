@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "2406f609-bedd-49f9-9ba0-04dd459d5fa7": {
+      "ProjectGuid": "2406f609-bedd-49f9-9ba0-04dd459d5fa7",
+      "DisplayName": "WebsiteBanHang",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

@@ -1,0 +1,96 @@
+﻿@model WebsiteBanHang.Models.ThanhVien
+@{
+    ViewBag.Title = "Quản lý thành viên";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<h4>@Html.ActionLink("Quản lý thành viên", "Index") > Tạo mới</h4>
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Tạo mới thành viên</h4>
+        @using (Html.BeginForm("TaoMoi", "QuanLyThanhVien", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <br />
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.TaiKhoan)
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.TaiKhoan)
+                        @Html.ValidationMessageFor(model => model.TaiKhoan, "", new { @style = "margin-bottom:15px; color:#DC143C;" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.MatKhau )
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.MatKhau)
+                        @Html.ValidationMessageFor(model => model.MatKhau, "", new { @style = "margin-bottom:15px; color:#DC143C;" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.HoTen)
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.HoTen)
+                        @Html.ValidationMessageFor(model => model.HoTen, "", new { @style = "margin-bottom:15px; color:#DC143C;" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.DiaChi)
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.DiaChi)
+                        @Html.ValidationMessageFor(model => model.DiaChi, "", new { @style = "margin-bottom:15px; color:#DC143C;" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.Email)
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.Email)
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @style = "margin-bottom:15px; color:#DC143C;" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.SoDienThoai)
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.SoDienThoai)
+                        @Html.ValidationMessageFor(model => model.SoDienThoai, "", new { @style = "margin-bottom:15px; color:#DC143C;" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.CauHoi)
+                    <div class="col-md-6">
+                        @Html.DropDownList("CauHoi")
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.CauTraLoi)
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.CauTraLoi)
+                        @Html.ValidationMessageFor(model => model.CauTraLoi, "", new { @style = "margin-bottom:15px; color:#DC143C;" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.MaLoaiTV, htmlAttributes: new { @class = "col-form-label font-weight-bold col-sm-2" })
+                    <div class="col-md-6">
+                        @Html.DropDownList("MaLoaiTV", null, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group row ">
+                    <div class="col-sm-4 mt-3">
+                        <input type="submit" value="Thêm mới" class="btn btn-sm btn-primary font-weight-bold w-25" />
+                        @Html.ActionLink("Trở về", "Index", null, htmlAttributes: new { @class = "btn btn-sm btn-secondary font-weight-bold w-25" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
